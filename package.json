@@ -1,0 +1,61 @@
+{
+  "name": "copy",
+  "version": "1.0.0",
+  "description": "copy of https://github.com/davellanedam/node-express-mongodb-jwt-rest-api-skeleton for learning",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dubianhaozhi/copy-of-davellanedam-node-express-mongodb-jwt-rest-api-skeleton.git"
+  },
+  "author": "Tsuyoshi Watanabe",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dubianhaozhi/copy-of-davellanedam-node-express-mongodb-jwt-rest-api-skeleton/issues"
+  },
+  "homepage": "https://github.com/dubianhaozhi/copy-of-davellanedam-node-express-mongodb-jwt-rest-api-skeleton#readme",
+  "scripts": {
+    "start": "cross-env NODE_ENV=production pm2 start server.js",
+    "dev": "cross-env NODE_ENV=development nodemon --inspect=9230 server.js",
+    "prettier": "prettier --write --config .prettierrc.json \"**/*.js\"",
+    "lint": "eslint --fix --config .eslintrc.json \"**/*.js\"",
+    "remark": "remark . -o"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged && npm run remark"
+    }
+  },
+  "lint-staged": {
+    "*.js": [
+      "prettier --write",
+      "eslint --fix"
+    ]
+  },
+  "dependencies": {
+    "babel-eslint": "^10.1.0",
+    "body-parser": "^1.19.0",
+    "compression": "^1.7.4",
+    "cors": "^2.8.5",
+    "dotenv-safe": "^8.2.0",
+    "expeditious-engine-redis": "^0.1.2",
+    "express": "^4.17.1",
+    "express-expeditious": "^5.1.1",
+    "helmet": "^4.1.1",
+    "i18n": "^0.13.2",
+    "morgan": "^1.10.0",
+    "passport": "^0.4.1",
+    "pm2": "^4.5.0",
+    "remark-cli": "^9.0.0"
+  },
+  "devDependencies": {
+    "cross-env": "^7.0.2",
+    "eslint": "^7.11.0",
+    "eslint-config-formidable": "^4.0.0",
+    "eslint-config-prettier": "^6.12.0",
+    "eslint-plugin-prettier": "^3.1.4",
+    "husky": "^4.3.0",
+    "lint-staged": "^10.4.0",
+    "nodemon": "^2.0.5",
+    "prettier": "^2.1.2",
+    "prettier-eslint": "^11.0.0"
+  }
+}
